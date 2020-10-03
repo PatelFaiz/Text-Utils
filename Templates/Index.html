@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Text Utils | Faiz Patel</title>
+  </head>
+  <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">TEXT UTILS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/contact">Contact <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+    <!-- Alert -->
+    <div class="alert alert-info" role="alert">
+        This <strong>Text Utils </strong>will allow you to utilise your Text!
+    </div>
+
+
+    <div class="container">
+        <!-- Form -->
+        <form action='/analyze' method='post'>{% csrf_token %}
+            <!-- Text Area -->
+            <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter Your Text Here</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" name="text"></textarea>
+            </div>
+            <!-- Switches -->
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1" name="removepunc">
+                <label class="custom-control-label" for="customSwitch1">Remove Punctuations</label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2" name="fullcaps">
+                <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3" name="newlineremover">
+                <label class="custom-control-label" for="customSwitch3">New Line Remover</label>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4" name="extraspace">
+                <label class="custom-control-label" for="customSwitch4">Space Remover</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-dark">Analyze</button>
+
+        </form>
+    </div>
+
+  </body>
+</html>
